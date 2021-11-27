@@ -1,0 +1,7 @@
+# Create object files
+gcc -c -pthread semaphoreFeature.c -lrt
+gcc -Wall -c menu.c main.c pipeFeature.c messageQueueFeature.c sharedMemFeature.c socketFeature.c consumer.c
+# Compile main driver
+gcc -pthread -o assignment menu.o main.o pipeFeature.o messageQueueFeature.o sharedMemFeature.o semaphoreFeature.o socketFeature.o
+# Compile consumer
+gcc -o consumer consumer.o pipeFeature.o messageQueueFeature.o sharedMemFeature.o socketFeature.o
